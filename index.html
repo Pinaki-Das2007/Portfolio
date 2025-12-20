@@ -4,55 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pinaki — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+    <!-- BACKGROUND GRADIENT -->
+<svg
+  class="bg-gradient"
+  viewBox="0 0 1440 900"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+  </defs>
+
+  <path
+    fill="url(#bgGrad)"
+    d="M0,300 C240,400 480,200 720,260 960,320 1200,200 1440,240 L1440,0 L0,0 Z"
+  />
+</svg>
+
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">
-      <img src="assets/images/avatar.png" alt="Pinaki Avatar" />
-      <span>Pinaki</span>
-    </div>
-    <nav>
+  <div class="nav-container">
+    <div class="logo">Pinaki</div>
+
+    <!-- NAV LINKS -->
+    <nav class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
 
   <!-- HERO -->
-  <section class="hero reveal">
-    <div class="hero-card">
-      <h1>Hi, I’m <span>Pinaki</span></h1>
-      <p>
-        I build clean, modern, and animated web experiences with a focus on
-        simplicity and performance.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn">Contact Me</a>
-      </div>
+  <main class="hero">
+
+  <!-- background avatar stays as you have -->
+
+  <div class="hero-card">
+    <h1 class="hero-title">
+      Hi, I’m <span>Pinaki</span>
+    </h1>
+
+    <h2 class="hero-role">
+      <span id="typed-text"></span><span class="cursor">|</span>
+    </h2>
+
+    <p class="hero-subtitle">
+      I build clean, modern, and animated web experiences focused on
+      performance and design.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="#contact" class="btn">Contact Me</a>
     </div>
-  </section>
+  </div>
+
+</main>
+
+
 
   <!-- ABOUT -->
-  <section id="about" class="section">
+  <section id="about" class="section reveal">
     <div class="card reveal">
       <h2>About Me</h2>
       <p>
-        I’m a passionate web developer who enjoys creating elegant user
-        interfaces and smooth user experiences. I focus on clean code,
-        animations that feel natural, and designs that make sense.
+        I’m a passionate web developer who enjoys building modern interfaces,
+        smooth animations, and clean user experiences.
       </p>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="section dark">
+  <section id="skills" class="section">
     <h2 class="section-title reveal">Skills</h2>
     <div class="grid">
       <div class="card reveal">HTML</div>
@@ -63,39 +108,156 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2 class="section-title reveal">Projects</h2>
-    <div class="grid">
-      <div class="card reveal">
-        <h3>Project One</h3>
-        <p>Modern dark website with clean animations.</p>
+  <section id="projects" class="section reveal">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+
+    <!-- Project Card -->
+    <div class="project-card reveal">
+      <div class="project-image">
+        <!-- optional image later -->
       </div>
-      <div class="card reveal">
-        <h3>Project Two</h3>
-        <p>Responsive portfolio built with simplicity in mind.</p>
+
+      <div class="project-content">
+        <h3>Portfolio Website</h3>
+        <p>
+          A modern animated portfolio website built with HTML, CSS, and
+          JavaScript focusing on clean UI and smooth interactions.
+        </p>
+
+        <div class="project-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" target="_blank">Live</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- Project Card -->
+     // project section we will work on it //
+    <div class="project-card reveal">
+      <div class="project-image"></div>
+
+      <div class="project-content">
+        <h3>Landing Page</h3>
+        <p>
+          Responsive landing page with dark theme, animations, and
+          performance-optimized layout.
+        </p>
+
+        <div class="project-tags">
+          <span>UI</span>
+          <span>Responsive</span>
+          <span>Design</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" target="_blank">Live</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- CONTACT -->
-  <section id="contact" class="section dark">
-    <div class="card reveal">
-      <h2>Contact</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
-    </div>
-  </section>
+  <form
+  id="contact"
+  class="contact-form"
+  action="https://formspree.io/f/mrezqbnn"
+  method="POST"
+>
+  <div class="form-group">
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+    />
+  </div>
 
+  <div class="form-group">
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      rows="5"
+      required
+    ></textarea>
+  </div>
+
+  <!-- Optional: subject line in your email -->
+  <input type="hidden" name="_subject" value="New message from Pinaki.dev" />
+
+  <button type="submit" class="btn primary contact-btn">
+    Send Message
+  </button>
+</form>
+
+ 
   <!-- FOOTER -->
-  <footer class="footer">
-    © 2025 Pinaki · pinaki.dev
-  </footer>
+ <footer class="footer">
 
-  <!-- JS -->
-  <script src="js/script.js"></script>
+  <div class="social-links">
+    <a href="https://github.com/Pinaki-Das2007" target="_blank" aria-label="GitHub">
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="mailto:daspinaki151@gmail.com" aria-label="Email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+    <!-- Telegram -->
+<a
+  href="https://t.me/yourusername"
+  target="_blank"
+  aria-label="Telegram"
+>
+  <i class="fa-brands fa-telegram"></i>
+</a>
+
+<!-- WhatsApp Business -->
+<a
+  href="https://wa.me/918260568557"
+  target="_blank"
+  aria-label="WhatsApp Business"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+  </div>
+
+  <p>© 2025 Pinaki Das · pinaki.dev</p>
+
+</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
