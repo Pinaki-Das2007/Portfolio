@@ -608,6 +608,8 @@ body {
   background: transparent;
 }
 
+
+
 /* wrapper fix */
 .contact-wrapper {
   width: 100%;
@@ -730,6 +732,265 @@ body {
 }
 
 
+.about-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* =========================
+   ABOUT PAGE (FULL BIO)
+========================= */
+
+.about-page-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.about-page-card {
+  max-width: 760px;
+  width: 100%;
+
+  background: linear-gradient(180deg, #1b1f2c, #151924);
+  padding: 40px;
+  border-radius: 22px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+}
+
+.about-page-card h2 {
+  margin-bottom: 16px;
+}
+
+.about-page-card h3 {
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.about-page-card p,
+.about-page-card li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.about-page-card ul {
+  padding-left: 18px;
+}
+
+.about-page-card hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 28px 0;
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .about-page-card {
+    padding: 28px 20px;
+  }
+}
+
+/* Make entire About card clickable */
+.about-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.about-card-link:hover {
+  cursor: pointer;
+}
+
+.about-card-link:hover .about-card {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+
+
+/* =========================
+   ABOUT CARD (CLICKABLE)
+========================= */
+
+.about-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  background: linear-gradient(180deg, #1b1f2c, #151924);
+  border-radius: 20px;
+  padding: 40px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+  cursor: pointer;
+}
+
+
+/* =========================
+   BACK TO HOME BUTTON
+========================= */
+
+.back-home-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Purple button */
+.back-home-btn {
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 500;
+
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-home-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.45);
+}
+
+.back-home-btn:hover {
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.15),
+    0 30px 60px rgba(99, 102, 241, 0.45);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card-link:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================
+   SKILLS CARDS - ONE LINE
+========================= */
+
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -845,6 +1106,12 @@ body {
   }
 
   /* CONTACT */
+
+  #headcontact{
+    padding-top: 60px;
+    justify-content: center;
+   
+  }
   .contact-card {
     padding: 32px 22px;
   }
@@ -929,5 +1196,17 @@ body {
   .btn {
     padding: 12px 16px;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .skills-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-cards {
+    grid-template-columns: 1fr;
   }
 }
