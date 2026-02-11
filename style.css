@@ -899,9 +899,43 @@ body {
 
 
 
+/* -----------------------------------------      comming soon card     ------------------------------------------ */
 
 
+.coming-soon-card{
+  height:250px;
+  border-radius:20px;
+  background:rgba(20,25,40,0.7);
+  backdrop-filter:blur(12px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-shadow:0 0 25px #4f8cff;
+  transition:0.3s;
+}
 
+.coming-soon-card:hover{
+  box-shadow:0 0 40px #9b5cff;
+  transform:scale(1.03);
+}
+
+.coming-soon-card h1{
+  color:#ffffff;
+  letter-spacing:3px;
+  font-size:32px;
+}
+
+.coming-soon-card p{
+  color:#b8c1ff;
+  margin-top:8px;
+}
+
+.coming-soon-card span{
+  margin-top:10px;
+  color:#4f8cff;
+}
 
 
 
