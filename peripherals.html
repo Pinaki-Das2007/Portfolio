@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Setup | Pinaki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Pinaki</div>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+        </nav>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="section peripherals-hero">
+    <h1 class="section-title">My Setup</h1>
+    <p class="setup-subtitle">
+      The tools and peripherals I use daily to build modern, high-performance applications.
+    </p>
+  </section>
+
+  <!-- PERIPHERALS GRID -->
+  <section class="section">
+    <div class="peripherals-grid">
+
+      <div class="peripheral-card">
+        <img src="C:\Users\PINAKI\portfolio\image.png" alt="MacBook Pro">
+        <h3>MacBook Pro</h3>
+        <p>M2 Chip • 16GB RAM • My main development machine.</p>
+      </div>
+
+      <div class="peripheral-card">
+        <img src="images/keyboard.jpg" alt="Mechanical Keyboard">
+        <h3>Mechanical Keyboard</h3>
+        <p>Tactile switches for precision and comfort.</p>
+      </div>
+
+      <div class="peripheral-card">
+        <img src="images/mouse.jpg" alt="Wireless Mouse">
+        <h3>Wireless Mouse</h3>
+        <p>Ergonomic design for long coding sessions.</p>
+      </div>
+
+      <div class="peripheral-card">
+        <img src="images/monitor.jpg" alt="4K Monitor">
+        <h3>4K Monitor</h3>
+        <p>Ultra-clear visuals for productivity and design.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL -->
+<div class="modal" id="peripheralModal">
+  <div class="modal-content">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDescription"></p>
+    <p id="modalDetails" class="modal-details"></p>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
