@@ -139,33 +139,99 @@ revealElements.forEach(el => revealObserver.observe(el));
 
 
 // ==========================
-// PERIPHERAL MODAL
+// PERIPHERAL MODAL (SAFE)
 // ==========================
 
-const modal = document.getElementById("peripheralModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalDetails = document.getElementById("modalDetails");
-const modalClose = document.getElementById("modalClose");
+document.addEventListener("DOMContentLoaded", () => {
+
+  const modal = document.getElementById("peripheralModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalDetails = document.getElementById("modalDetails");
+  const modalClose = document.getElementById("modalClose");
+
+  if (!modal) return;
+
+  document.querySelectorAll(".peripheral-card").forEach(card => {
+    card.addEventListener("click", () => {
+      modalTitle.textContent = card.dataset.title || "";
+      modalDescription.textContent = card.dataset.description || "";
+      modalDetails.textContent = card.dataset.details || "";
+
+      modal.classList.add("active");
+    });
+  });
+
+  if (modalClose) {
+    modalClose.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+  }
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+});
+
+
+// ==========================
+// 3D HOVER TILT EFFECT
+// ==========================
 
 document.querySelectorAll(".peripheral-card").forEach(card => {
-  card.addEventListener("click", () => {
-    modalTitle.textContent = card.dataset.title;
-    modalDescription.textContent = card.dataset.description;
-    modalDetails.textContent = card.dataset.details;
 
-    modal.classList.add("active");
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+
+    card.style.transform = `
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.04)
+    `;
   });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+  });
+
 });
 
-if (modalClose) {
-  modalClose.addEventListener("click", () => {
-    modal.classList.remove("active");
+
+if (window.innerWidth > 768) {
+  document.querySelectorAll(".peripheral-card").forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+
+      card.style.transform = `
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        scale(1.04)
+      `;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+    });
+
   });
 }
-
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("active");
-  }
-});
