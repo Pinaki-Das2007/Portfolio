@@ -341,8 +341,8 @@ body {
 ========================= */
 
 .footer .social-links a {
-  color: #0f172a; /* DARK ICON */
-  border: 1px solid rgba(15, 23, 42, 0.4); /* DARK BORDER */
+  color: #dee5f5; /* DARK ICON */
+  border: 1px solid rgba(49, 50, 51, 0.938); /* DARK BORDER */
 }
 
 .footer .social-links a:hover {
